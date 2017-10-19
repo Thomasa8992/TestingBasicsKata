@@ -27,21 +27,19 @@ namespace TestingBasics
         }
 
         // Use for loop
-        public static bool CheckUserPassword10Times()
+        /// <summary>
+        /// Ask the user for their password a certain number of times before locking them out
+        /// </summary>
+        /// <param name="times">The number of times to ask for the passwords</param>
+        /// <returns>If they successfully log in, returns true. Otherwise, returns false.</returns>
+        public static bool CheckUserPassword(int times)
         {
             // We use a for loop because we want to loop a specific number of times, in this case 10 times
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < times; i++)
             {
-                Console.WriteLine("Type in your password?");
-                var input = Console.ReadLine();
-                if (input == "1234")
-                {
-                    Console.WriteLine("You've logged in successfully");
-                    return true;
-                }
+                Console.WriteLine("Please Enter your password");
+                if (Console.ReadLine() == "1234") { return true; }
             }
-
-            Console.WriteLine("You're locked out now, sucka!");
 
             return false;
         }
