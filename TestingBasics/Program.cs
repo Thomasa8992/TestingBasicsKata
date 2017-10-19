@@ -11,8 +11,25 @@ namespace TestingBasics
     {
         static void Main(string[] args)
         {
+            var passwords = new List<string>();
+            passwords.Add("2345");
+            passwords.Add("1234");
+
+            var hasCorrectPassword = PasswordChecker.CheckUserPasswords(passwords);
+
+            Console.WriteLine("has correct password? " + hasCorrectPassword);
+            Console.ReadLine();
+
+
             //string myString = "Hello World!";
             //var myString = "Hello World!";
+
+            var myStrings = GrabSomeWordsConcisely();
+
+            foreach (var str in myStrings)
+            {
+                Console.WriteLine(str);
+            }
 
             var cody = new User();
             Console.WriteLine("Have I verified my email address? " + cody.IsEmailVerified);
@@ -47,6 +64,8 @@ namespace TestingBasics
                     }
                 }
             };
+
+            question.Name = "What are you even doing?";
 
             foreach (var answer in question.DesiredAnswers)
             {
