@@ -8,6 +8,7 @@ namespace TestingBasics
 {
     class PasswordChecker
     {
+        // Use While loop
         public static void CheckUserPasswordUntilCorrect()
         {
             // We need to do something
@@ -25,6 +26,7 @@ namespace TestingBasics
             }
         }
 
+        // Use for loop
         public static bool CheckUserPassword10Times()
         {
             // We use a for loop because we want to loop a specific number of times, in this case 10 times
@@ -44,7 +46,7 @@ namespace TestingBasics
             return false;
         }
 
-        // Now, you can pass an array of strings, a list of strings, or anything
+        // Use a foreach loop
         /// <summary>
         /// Checks passwords given to see if it contains 1234
         /// </summary>
