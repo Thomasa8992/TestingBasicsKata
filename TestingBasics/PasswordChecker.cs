@@ -67,5 +67,31 @@ namespace TestingBasics
 
             return false;
         }
+
+        public static void EnteredSecurePassword(string password)
+        {
+            var specials = "!@#$%^&*()".ToCharArray();
+
+            if (password.Length < 10)
+            {
+                Console.WriteLine("Not long enough!");
+            }
+            else if (!password.Any(char.IsUpper))
+            {
+                Console.WriteLine("Must contain at least one uppercase character");
+            }
+            else if (!password.Any(char.IsLower))
+            {
+                Console.WriteLine("Must contain at least one lowercase character");
+            }
+            else if (password.IndexOfAny(specials) == -1)
+            {
+                Console.WriteLine("Must contain at least one special character");
+            }
+            else
+            {
+                Console.WriteLine("Excellent you have a valid password!");
+            }
+        }
     }
 }
